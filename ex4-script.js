@@ -16,7 +16,9 @@ function orangeJump() {
     .querySelector("#orange_sprite")
     .removeEventListener("click", orangeJump);
   document.querySelector("#orange_sprite").classList.add("jump-once");
-  document.querySelector("#orange_sprite").addEventListener("click", resetJump);
+  document
+    .querySelector("#orange_sprite")
+    .addEventListener("animationend", resetJump);
 }
 
 // det virker ikke det skidt
