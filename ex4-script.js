@@ -8,7 +8,6 @@ function start() {
   document
     .querySelector("#orange_sprite")
     .addEventListener("click", orangeJump);
-  document.querySelector("#orange_sprite").addEventListener("click", resetJump);
 }
 
 function orangeJump() {
@@ -17,6 +16,7 @@ function orangeJump() {
     .querySelector("#orange_sprite")
     .removeEventListener("click", orangeJump);
   document.querySelector("#orange_sprite").classList.add("jump-once");
+  document.querySelector("#orange_sprite").addEventListener("click", resetJump);
 }
 
 // det virker ikke det skidt
@@ -26,9 +26,13 @@ function resetJump() {
     .querySelector("#orange_sprite")
     .removeEventListener("click", resetJump);
   document.querySelector("#orange_sprite").classList.remove("jump-once");
-  document.querySelector("#orange_sprite").offsetleft;
-  document.querySelector("#orange_sprite").classList.add("jump-once");
+  document
+    .querySelector("#orange_sprite")
+    .addEventListener("click", orangeJump);
 }
+
+// document.querySelector("#orange_sprite").offsetleft;
+// document.querySelector("#orange_sprite").classList.add("jump-once");
 
 // console.log("hej4a");
 
